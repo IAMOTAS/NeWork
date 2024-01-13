@@ -9,6 +9,31 @@
   
 }
 
+.container{
+  width: 1140px;
+  padding: 0px 15px;
+  margin: auto;
+}
+
+body{
+  background: hsl(207, 26%, 17%);
+}
+
+.header{
+  width: 100%;
+  height: 70px;
+  line-height: 70px;
+  position: fixed;
+  top:0;
+  left: 0;
+  background: hsl(209, 23%, 22%);
+}
 
 
+.header h5{
+  display: flex;
+  align-items: center;
+  font-size: 1.3rem;
+  color:#fff;
+}
 

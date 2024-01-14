@@ -27,6 +27,7 @@ body{
   top:0;
   left: 0;
   background: hsl(209, 23%, 22%);
+  z-index: 11;
 }
 
 
@@ -104,6 +105,7 @@ input{
   border : none;
   outline : none;
   margin-bottom: 50px;
+  cursor: pointer;
 }
 
 
@@ -111,3 +113,80 @@ input{
   color: #fff;
   font-size:  1rem;
 }
+
+
+.country_top{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+}
+
+
+select{
+  padding: 10px 25px;
+  background: hsl(209, 23%, 22%);
+  margin-bottom: 50px;  
+  border: none;
+  outline: none;
+  border-radius: 5px;
+  color: #fff;
+  cursor: pointer;
+}
+
+
+ .country_info_wrapper{
+  margin-top: 120px;
+ }
+
+
+ .country_info_container{
+  display: flex;
+  column-gap: 3rem;
+ }
+
+
+ .country_info_img, .country_info{
+  width: 50%;
+ }
+
+
+ button{
+  padding: 10px 25px;
+  color:#fff;
+  background: hsl(209, 23%, 22%);
+  border: none;
+  outline: none;
+  cursor:pointer;
+  width: 120px;
+  border-radius: 5px;
+  margin-bottom: 50px;
+ }
+
+
+ a{
+  text-decoration: none;
+  color: #fff;
+
+ }
+
+
+ .country_info h3{
+  color: #fff;
+  font-size: 1.3rem;
+  margin-bottom: 30px;
+ }
+
+
+ .country_info-left h5{
+  color: #fff;
+  font-size: 0.9rem;
+  margin-bottom: 10px;
+ }
+
+
+ .country_info-left h5 span{
+  color: #fff;
+  opacity: 85%;
+  font-weight: 600;
+ }

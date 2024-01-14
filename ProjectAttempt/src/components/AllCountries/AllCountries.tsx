@@ -1,7 +1,9 @@
-
 import React, { useState, useEffect } from 'react';
 import { apiURL } from '../util/api';
 import SearchInput from '../Search/SearchInput';
+import FilterCountry from '../FilterCountry/FilterCountry';
+
+import { Link } from 'react-router-dom';
 
 interface Country {
   name: {
@@ -65,6 +67,22 @@ const AllCountries: React.FC = () => {
     }
   };
 
+  const getCountryByRegion = async (regionName: string) => {
+    try {
+      const res = await fetch(`${apiURL}/region/${regionName}`);
+
+      if (!res.ok) throw new Error('Failed.........');
+
+      const data = await res.json();
+
+      setCountries(data);
+      setIsLoading(false);
+    } catch (error) {
+      setIsLoading(false);
+      setError((error as Error).message);
+    }
+  };
+
   useEffect(() => {
     getAllCountries();
   }, []);
@@ -75,6 +93,9 @@ const AllCountries: React.FC = () => {
         <div className="search">
           <SearchInput onSearch={getCountryByName} />
         </div>
+        <div className="filter">
+          <FilterCountry onSelect={getCountryByRegion} />
+        </div>
       </div>
 
       <div className="country_bottom">
@@ -84,17 +105,22 @@ const AllCountries: React.FC = () => {
         {!isLoading && !error && countries?.length > 0 && (
           <>
             {countries.map((country, index) => (
+             <Link to={`/country/${country.name.common}`}>
               <div key={index} className="country_card">
                 <div className="country_img">
                   <img src={country.flags?.png} alt="" />
                 </div>
                 <div className="country_data">
                   <h3>{country.name?.common}</h3>
-                  <h6>Population: {country.population}</h6>
+                  <h6>
+                    {""}
+                    Population:{""} {new Intl.NumberFormat().format(country.population)}
+                    </h6>
                   <h6>Region: {country.region}</h6>
                   <h6>Capital: {country.capital}</h6>
                 </div>
               </div>
+             </Link>
             ))}
           </>
         )}
@@ -104,5 +130,3 @@ const AllCountries: React.FC = () => {
 };
 
 export default AllCountries;
-
-

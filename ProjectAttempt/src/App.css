@@ -37,3 +37,53 @@ body{
   color:#fff;
 }
 
+
+.country_bottom{
+  display: flex;
+  flex-wrap: wrap;
+  column-gap: 2rem;
+  row-gap: 2rem;
+}
+
+
+.country_card{
+  width:250px;
+  
+  border-radius:5px;
+  background:hsl(209, 23%, 22%);
+  color:#fff;
+}
+
+
+.country_img img{
+width: 100%;
+border-radius:5px;
+border-radius:5px 5px 0px 0px;
+
+}
+
+
+.all_country_wrapper {
+  margin-top: 100px;
+
+}
+
+
+.country_data{
+  padding:20px;
+}
+
+
+.country_data h3{
+  margin-top: 10px;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+
+
+.country_data h6{
+  margin-bottom: 10px;
+  font-weight: 400;
+  opacity: 80%;
+  
+}

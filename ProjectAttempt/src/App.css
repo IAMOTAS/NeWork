@@ -105,3 +105,9 @@ input{
   outline : none;
   margin-bottom: 50px;
 }
+
+
+::placeholder{
+  color: #fff;
+  font-size:  1rem;
+}

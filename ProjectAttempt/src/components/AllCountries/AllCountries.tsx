@@ -47,7 +47,7 @@ const AllCountries: React.FC = () => {
       const res = await fetch(`${apiURL}/name/${countryName}`);
 
       if (!res.ok) {
-        throw new Error('Not found any country!');
+        throw new Error('No Country to show for this Search!');
       }
 
       const data = await res.json();
